@@ -3,6 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BestScoreManager } from './app.storage.service';
+import * as Hammer from 'hammerjs';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+export class HammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    'swipe': { direction: Hammer.DIRECTION_ALL }
+  };
+}
+
 
 @NgModule({
   declarations: [
@@ -12,7 +21,11 @@ import { BestScoreManager } from './app.storage.service';
     BrowserModule
   ],
   providers: [
-    BestScoreManager
+    BestScoreManager,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: HammerConfig
+    }
   ],
   bootstrap: [
     AppComponent

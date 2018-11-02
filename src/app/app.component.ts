@@ -59,6 +59,19 @@ export class AppComponent {
     }
   }
 
+  handleSwipeEvents(swipeEvent) {
+    if (swipeEvent.type === 'swipeleft' && this.snake.direction !== CONTROLS.RIGHT) {
+      this.tempDirection = CONTROLS.LEFT;
+    } else if (swipeEvent.type === 'swipeup' && this.snake.direction !== CONTROLS.DOWN) {
+      this.tempDirection = CONTROLS.UP;
+    } else if (swipeEvent.type === 'swiperight' && this.snake.direction !== CONTROLS.LEFT) {
+      this.tempDirection = CONTROLS.RIGHT;
+    } else if (swipeEvent.type === 'swipedown' && this.snake.direction !== CONTROLS.UP) {
+      this.tempDirection = CONTROLS.DOWN;
+    }
+  }
+
+
   setColors(col: number, row: number): string {
     if (this.isGameOver) {
       return COLORS.GAME_OVER;

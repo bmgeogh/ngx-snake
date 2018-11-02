@@ -1,4 +1,5 @@
-<div class="game-container">
+<div class="game-container" (swipeleft)="handleSwipeEvents($event)" (swiperight)="handleSwipeEvents($event)" (swipeup)="handleSwipeEvents($event)"
+  (swipedown)="handleSwipeEvents($event)">
   <div class="game-header">
     <h3 class="logo">ngx-Snake</h3>
     <div class="score-block">
