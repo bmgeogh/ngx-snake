@@ -24,10 +24,11 @@
     "zone.js": "~0.8.4"
   },
   "devDependencies": {
+    "@angular/cli": "^1.5.0",
     "@angular/compiler-cli": "^5.0.0",
     "@types/node": "^8.0.51",
-    "@angular/cli": "^1.5.0",
     "codelyzer": "^4.0.1",
+    "node-sass": "^4.10.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "typescript": "^2.5.3"
